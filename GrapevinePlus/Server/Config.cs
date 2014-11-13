@@ -94,7 +94,7 @@ namespace Grapevine.Server
             return null;
         }
 
-        private static string LoadJson(string filename)
+        protected static string LoadJson(string filename)
         {
             string data = null;
 
@@ -112,7 +112,7 @@ namespace Grapevine.Server
             return data;
         }
 
-        private static string GetDefaultFile()
+        protected static string GetDefaultFile()
         {
             return Path.Combine(new[] { Path.GetDirectoryName(Assembly.GetCallingAssembly().Location), "config.json" });
         }
