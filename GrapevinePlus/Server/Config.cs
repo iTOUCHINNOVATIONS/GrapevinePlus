@@ -2,6 +2,7 @@
 using System.IO;
 using System.Reflection;
 using Newtonsoft.Json;
+
 namespace Grapevine.Server
 {
     /// <summary>
@@ -40,6 +41,11 @@ namespace Grapevine.Server
         public int MaxThreads { get; set; }
 
         /// <summary>
+        /// Used to configure the EventLogger Exception logging
+        /// </summary>
+        public bool LogExceptions { get; set; }
+
+        /// <summary>
         /// Path to serialized config file
         /// </summary>
         [JsonIgnore]
@@ -52,6 +58,7 @@ namespace Grapevine.Server
             this.Port = "1234";
             this.DirIndex = "index.html";
             this.MaxThreads = 5;
+            this.LogExceptions = false;
         }
 
         /// <summary>
@@ -91,7 +98,7 @@ namespace Grapevine.Server
                 EventLogger.Log(e);
             }
 
-            return null;
+            return new Config();
         }
 
         protected static string LoadJson(string filename)
