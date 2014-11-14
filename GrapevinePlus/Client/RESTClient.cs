@@ -30,8 +30,9 @@ namespace Grapevine.Client
 
             client.CookieContainer = this.Cookies;
             client.Method = request.Method.ToString();
-            client.ContentType = request.ContentType.ToValue();
             client.Headers = request.Headers;
+
+            client.ContentType = request.ContentType.ToValue();
 
             if (!Object.ReferenceEquals(request.Payload, null))
             {
