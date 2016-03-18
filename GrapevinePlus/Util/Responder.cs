@@ -118,7 +118,7 @@ namespace Grapevine
             var length = buffer.Length;
 
             context.Response.ContentType = ContentType.JSON.ToValue();
-            context.Response.ContentEncoding = Encoding.UTF8;
+            if (context.Response.ContentEncoding == null) context.Response.ContentEncoding = Encoding.UTF8;
             context.Response.ContentLength64 = length;
             context.Response.OutputStream.Write(buffer, 0, length);
             context.Response.OutputStream.Close();
@@ -134,7 +134,7 @@ namespace Grapevine
             var length = buffer.Length;
 
             context.Response.ContentType = ContentType.JSON.ToValue();
-            context.Response.ContentEncoding = Encoding.UTF8;
+            if (context.Response.ContentEncoding == null) context.Response.ContentEncoding = Encoding.UTF8;
             context.Response.ContentLength64 = length;
             context.Response.OutputStream.Write(buffer, 0, length);
             context.Response.OutputStream.Close();
