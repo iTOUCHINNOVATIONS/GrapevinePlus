@@ -1,5 +1,5 @@
-Grapevine Plus 3.0.4
-====================
+Grapevine Plus
+==============
 
 *The best solutions are the simplest to implement*. Embedding a REST/HTTP server in your application should be **simple**. Consuming REST resources from inside your application should be **simple**. If what you've been using *doesn't feel simple*, try **Grapevine**. It doesn't get any simpler than this.
 
